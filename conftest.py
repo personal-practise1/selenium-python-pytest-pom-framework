@@ -41,10 +41,10 @@ def setup_teardown(request):
     if request.config.getoption("--headless"):
         options.add_argument("--headless")
 
-        # Required for GitHub Actions/Linux
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--window-size=1920,1080")
+    # Required for GitHub Actions/Linux
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--window-size=1920,1080")
 
     if browser == "chrome":
         request.cls.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()),options=options)
