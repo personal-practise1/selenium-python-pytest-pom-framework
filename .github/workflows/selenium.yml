@@ -29,4 +29,4 @@ jobs:
 
       - name: Run Tests
         run: |
-          pytest tests/ --html=report.html --self-contained-html
+          pytest tests/ --html=report.html --self-contained-html --headless
